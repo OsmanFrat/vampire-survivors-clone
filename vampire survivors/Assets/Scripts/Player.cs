@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        playerHealth = maxPlayerhealth;
+
         spriteRenderer.enabled = true;
         bladeswitch.enabled = true;
         bladeswitch.enabled = true;
