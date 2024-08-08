@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Projectile
   - Blue Exp
+  - Hamburger
   layers:
   - Default
   - TransparentFX

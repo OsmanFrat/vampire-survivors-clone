@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.008852959, y: 0.000983715}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8917961, y: 0.91146946}
   m_EdgeRadius: 0
 --- !u!114 &8809491241163104432
 MonoBehaviour:
@@ -145,6 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   player: {fileID: 0}
+  gameManager: {fileID: 0}
   expPrefab: {fileID: 2739980897999120840, guid: 0b32e39bf22365041a403d016b08aa4b, type: 3}
+  expSpawnRate: 0
   enemyHealth: 0
-  maxEnemyHealth: 1
+  maxEnemyHealth: 10

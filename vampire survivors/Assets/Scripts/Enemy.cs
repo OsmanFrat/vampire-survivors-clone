@@ -6,8 +6,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private GameObject player;
     [SerializeField] private GameManager gameManager;
+    
     public GameObject expPrefab;
     public float expSpawnRate;
+
 
     [SerializeField] float enemyHealth, maxEnemyHealth = 1f;
     private void Awake()
@@ -35,9 +37,10 @@ public class Enemy : MonoBehaviour
         {
             if (expSpawnRate <= 0.5f)
             {
-                // Drop the exp item
+                // drop exp
                 Instantiate(expPrefab, transform.position, Quaternion.identity);
             }
+
             gameManager.killCount++;
             // kill the enemy
             Destroy(gameObject);
@@ -45,15 +48,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             // Oyuncuya zarar ver
             Player player = collision.gameObject.GetComponent<Player>();
+
             if (player != null)
             {
-                player.TakeDamage(1);
+                player.TakeDamage(0.2f);
             }
         }
     }
