@@ -6,7 +6,8 @@ public class GrassTileGenerator : MonoBehaviour
     public Tilemap tilemap;
     public TileBase tile;
     public Transform player;
-    public int viewDistance = 10;
+    public int viewDistanceX = 10; 
+    public int viewDistanceY = 5; 
 
     private Vector3Int previousPlayerCell;
 
@@ -34,15 +35,34 @@ public class GrassTileGenerator : MonoBehaviour
 
     void GenerateTilesAroundPlayer(Vector3Int playerCell)
     {
-        for (int x = -viewDistance; x <= viewDistance; x++)
+        for (int x = -viewDistanceX; x <= viewDistanceX; x++)
         {
-            for (int y = -viewDistance; y <= viewDistance; y++)
+            for (int y = -viewDistanceY; y <= viewDistanceY; y++)
             {
                 Vector3Int tilePosition = new Vector3Int(playerCell.x + x, playerCell.y + y, 0);
                 if (!tilemap.HasTile(tilePosition))
                 {
                     tilemap.SetTile(tilePosition, tile);
                 }
+            }
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (tilemap == null || player == null) return;
+
+        Gizmos.color = Color.green;
+        Vector3Int playerCell = tilemap.WorldToCell(player.position);
+
+        
+        for (int x = -viewDistanceX; x <= viewDistanceX; x++)
+        {
+            for (int y = -viewDistanceY; y <= viewDistanceY; y++)
+            {
+                Vector3Int tilePosition = new Vector3Int(playerCell.x + x, playerCell.y + y, 0);
+                Vector3 tileWorldPosition = tilemap.CellToWorld(tilePosition) + tilemap.tileAnchor;
+                Gizmos.DrawWireCube(tileWorldPosition, Vector3.one);
             }
         }
     }

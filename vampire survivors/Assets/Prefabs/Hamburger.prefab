@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 926194213903442250}
   - component: {fileID: 2423805326407726108}
   - component: {fileID: -6451954375039223904}
-  m_Layer: 0
+  - component: {fileID: -3228247748340879002}
+  m_Layer: 6
   m_Name: Hamburger
   m_TagString: Hamburger
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3613764974294837661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3069, y: -0.7167, z: 0}
+  m_LocalPosition: {x: -0.3069, y: -0.7167, z: -1}
   m_LocalScale: {x: 2.9177513, y: 3.239804, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,3 +131,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3335253, y: 0.3260854}
   m_EdgeRadius: 0
+--- !u!114 &-3228247748340879002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613764974294837661}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8258a50119375aa4d8137b958dde2873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  followSpeed: 1
+  startFollow: 0

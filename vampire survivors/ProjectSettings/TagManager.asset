@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Blue Exp
   - Hamburger
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - 
   - Water
   - UI
+  - Item
   - Enemy
   - Player
-  - 
-  - 
+  - Weapon
   - 
   - 
   - 

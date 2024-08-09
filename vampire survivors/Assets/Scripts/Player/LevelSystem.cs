@@ -11,6 +11,11 @@ public class LevelSystem : MonoBehaviour
     [SerializeField] private Image xpProgressBar;
     public bool playerLeveledUP = false;
 
+    private void Start()
+    {
+        
+    }
+
     public void ExperienceController()
     {
         levelText.text = "LVL: " + level.ToString();

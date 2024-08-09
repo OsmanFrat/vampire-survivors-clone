@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public bool gamePaused = false;
 
-
-
     private void Start()
     {
         Time.timeScale = 1f;

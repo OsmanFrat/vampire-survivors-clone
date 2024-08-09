@@ -3,18 +3,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 1.0f;
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameManager gameManager;
-    
+    [SerializeField] private GameManager gameManager; 
     public GameObject expPrefab;
     public float expSpawnRate;
-
-
     [SerializeField] float enemyHealth, maxEnemyHealth = 1f;
+
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -22,11 +17,6 @@ public class Enemy : MonoBehaviour
     {
         enemyHealth = maxEnemyHealth;
         expSpawnRate = Random.Range(0f, 0.7f);
-    }
-    // follow the player
-    private void FixedUpdate()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     public void TakeDamage(float damageAmount)

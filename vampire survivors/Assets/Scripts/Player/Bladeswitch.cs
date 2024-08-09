@@ -5,17 +5,22 @@ public class Bladeswitch : MonoBehaviour
     [SerializeField] private GameObject leftBlade;
     [SerializeField] private GameObject rightBlade;
     [SerializeField] private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     private void Update()
     {
         if (!gameManager.gamePaused)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 leftBlade.SetActive(true);
                 rightBlade.SetActive(false);
             }
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 leftBlade.SetActive(false);
                 rightBlade.SetActive(true);

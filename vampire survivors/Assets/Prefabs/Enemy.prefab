@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 931751126961887374}
   - component: {fileID: 6615373138135017700}
   - component: {fileID: 8809491241163104432}
-  m_Layer: 6
+  - component: {fileID: -5209822811665415117}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -143,10 +144,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e78663866ecdd4a8f61e1c37c66239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  player: {fileID: 0}
   gameManager: {fileID: 0}
   expPrefab: {fileID: 2739980897999120840, guid: 0b32e39bf22365041a403d016b08aa4b, type: 3}
   expSpawnRate: 0
   enemyHealth: 0
-  maxEnemyHealth: 10
+  maxEnemyHealth: 1
+--- !u!114 &-5209822811665415117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791215820018221663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8258a50119375aa4d8137b958dde2873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  followSpeed: 1
+  startFollow: 1

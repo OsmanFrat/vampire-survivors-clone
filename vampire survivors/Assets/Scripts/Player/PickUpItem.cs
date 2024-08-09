@@ -1,21 +1,36 @@
+using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class PickUpItem : MonoBehaviour
 {
     private Vector2 lastInputDirection;
 
-    private void Update()
+    void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        if (input != Vector2.zero)
+        // testing
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            lastInputDirection = input.normalized;
+            Time.timeScale = 0.1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Time.timeScale = 1f;
         }
 
     }
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.TryGetComponent<FollowPlayer>(out FollowPlayer itemComponent))
+        {
+            if (!itemComponent.startFollow)
+            {
+                itemComponent.startFollow = true;
+            }
+
+        }
     }
 }
