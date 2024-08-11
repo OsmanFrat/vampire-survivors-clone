@@ -9,6 +9,8 @@ TagManager:
   - Blue Exp
   - Hamburger
   - Weapon
+  - PickUpItem
+  - Exp
   layers:
   - Default
   - TransparentFX
@@ -16,11 +18,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Item
   - Enemy
+  - Item
   - Player
   - Weapon
-  - 
+  - PickUpItem
   - 
   - 
   - 
@@ -45,4 +47,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Item
+    uniqueID: 2584144605
+    locked: 0
+  - name: Player
+    uniqueID: 985588619
+    locked: 0
+  - name: Weapon
+    uniqueID: 304665293
+    locked: 0
+  - name: Enemy
+    uniqueID: 1251426663
     locked: 0

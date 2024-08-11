@@ -5,16 +5,19 @@ public class CollideWithItem : MonoBehaviour
     [SerializeField] private LevelSystem levelSystem;
     [SerializeField] private Player player;
     [SerializeField] private AudioClip eatingSoundEffect;
+    [SerializeField] private AudioClip expSoundEffect;
     [SerializeField] private AudioSource _source;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Blue Exp"))
+        if (collision.gameObject.CompareTag("Exp"))
         {
             levelSystem.currentXp += 10;
             levelSystem.ExperienceController();
 
-            Debug.Log("Blue Exp collected!");
+            Debug.Log("Exp collected!");
+
+            _source.PlayOneShot(expSoundEffect);
 
             Destroy(collision.gameObject);
         }

@@ -6,7 +6,8 @@ public class GarlicArea : MonoBehaviour
     [SerializeField] private Sprite oneCircleSprite, twoCircleSprite, threeCircleSprite;
     [SerializeField] private CircleCollider2D circleCol;
 
-    public int circleLevel = 1;
+    //public int circleLevel = 1;
+    public WeaponAndItemLevel weaponAndItemLevel;
 
     private void Update()
     {
@@ -21,7 +22,7 @@ public class GarlicArea : MonoBehaviour
 
     private void ChangeSpriteAndCollider()
     {
-        switch (circleLevel)
+        switch (weaponAndItemLevel.GarlicLevel)
         {
             case 1:
                 spriteRen.sprite = oneCircleSprite;

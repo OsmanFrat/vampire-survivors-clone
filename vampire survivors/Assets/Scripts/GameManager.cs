@@ -3,7 +3,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    
     public int playerLvl = 1;
 
     public TextMeshProUGUI timerText;
@@ -20,9 +19,22 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public bool gamePaused = false;
 
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip levelUpSoundEffect;
+    [SerializeField] private AudioClip gameOverSoundEffect;
+    public GameObject colorfullBar;
+
+    public WeaponAndItemLevel weaponAndItemLevel;
+
+    private void Awake()
+    {
+        weaponAndItemLevel.ResetValues();
+    }
+
     private void Start()
     {
         Time.timeScale = 1f;
+        colorfullBar.SetActive(false);
         levelUpPanel.SetActive(false);
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
@@ -34,21 +46,55 @@ public class GameManager : MonoBehaviour
 
         killCountText.text = killCount.ToString();
 
-        if(levelSystem.playerLeveledUP)
+        HandleLevelUp();
+        HandleGameOver();
+        HandlePauseToggle();
+    }
+
+    private void Timer()
+    {
+        elapsedTime += Time.deltaTime;
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+
+        string timeFormatted = string.Format("{00:00}:{01:00}", minutes, seconds);
+        timerText.text = timeFormatted;
+    }
+
+    private void HandleLevelUp()
+    {
+        if (levelSystem.playerLeveledUP && !levelUpPanel.activeSelf)
         {
+            if (!_source.isPlaying)
+            {
+                _source.PlayOneShot(levelUpSoundEffect);
+            }
+            colorfullBar.SetActive(true);
             levelUpPanel.SetActive(true);
             Time.timeScale = 0f;
         }
+    }
 
-        if (player.playerHealth <= 0)
+    private void HandleGameOver()
+    {
+        if (player.playerHealth <= 0 && !gameOverScreen.activeSelf)
         {
+            if (!_source.isPlaying)
+            {
+                _source.PlayOneShot(gameOverSoundEffect);
+            }
+
             Time.timeScale = 0f;
             gameOverScreen.SetActive(true);
         }
+    }
 
+    private void HandlePauseToggle()
+    {
         if (player.playerHealth > 0)
         {
-            if (!gamePaused && Input.GetKeyDown(KeyCode.Escape))
+            if (!gamePaused && Input.GetKeyDown(KeyCode.Escape) && !levelUpPanel.activeSelf)
             {
                 PauseGame();
             }
@@ -57,18 +103,6 @@ public class GameManager : MonoBehaviour
                 UnPauseGame();
             }
         }
-
-    }
-
-    public void Timer()
-    {
-        elapsedTime += Time.deltaTime;  
-
-        int minutes = Mathf.FloorToInt(elapsedTime / 60f);  
-        int seconds = Mathf.FloorToInt(elapsedTime % 60f);  
-
-        string timeFormatted = string.Format("{00:00}:{01:00}", minutes, seconds);
-        timerText.text = timeFormatted;
     }
 
     private void PauseGame()
@@ -85,16 +119,15 @@ public class GameManager : MonoBehaviour
         gamePaused = false;
     }
 
-
     public void PauseGameButton()
     {
-        if (player.playerHealth > 0)
+        if (player.playerHealth > 0 && !levelUpPanel.activeSelf)
         {
             if (!gamePaused)
             {
                 PauseGame();
             }
-            else if (gamePaused)
+            else
             {
                 UnPauseGame();
             }
