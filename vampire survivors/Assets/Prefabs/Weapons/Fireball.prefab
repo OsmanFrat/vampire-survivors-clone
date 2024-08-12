@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerEnter: 1
   onTriggerStay: 0
-  weaponDamage: 0.2
+  weaponDamage: 1
 --- !u!114 &753798240506665571
 MonoBehaviour:
   m_ObjectHideFlags: 0

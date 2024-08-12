@@ -24,11 +24,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip gameOverSoundEffect;
     public GameObject colorfullBar;
 
-    public WeaponAndItemLevel weaponAndItemLevel;
+    public WeaponsAndItems weaponsAndItems;
 
     private void Awake()
     {
-        weaponAndItemLevel.ResetValues();
+        weaponsAndItems.ResetValues();
     }
 
     private void Start()

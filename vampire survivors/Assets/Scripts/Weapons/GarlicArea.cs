@@ -7,22 +7,16 @@ public class GarlicArea : MonoBehaviour
     [SerializeField] private CircleCollider2D circleCol;
 
     //public int circleLevel = 1;
-    public WeaponAndItemLevel weaponAndItemLevel;
+    public WeaponsAndItems weaponsAndItems;
 
     private void Update()
     {
         ChangeSpriteAndCollider();
-        
-        //For testing
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    circleLevel++;
-        //}
     }
 
     private void ChangeSpriteAndCollider()
     {
-        switch (weaponAndItemLevel.GarlicLevel)
+        switch (weaponsAndItems.GarlicLevel)
         {
             case 1:
                 spriteRen.sprite = oneCircleSprite;

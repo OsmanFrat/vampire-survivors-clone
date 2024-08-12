@@ -9,14 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 151b7dd88aa875a4c8e2ca4afd9278b3, type: 3}
-  m_Name: WeaponAndItemLevel
+  m_Script: {fileID: 11500000, guid: 3e72e59707c015248b0248290970cb95, type: 3}
+  m_Name: WeaponAndItems
   m_EditorClassIdentifier: 
-  GarlicLevel: 1
-  FireballLevel: 1
   BladeLevel: 1
+  isBladeEquipped: 1
+  GarlicLevel: 1
+  isGarlicEquipped: 0
+  FireballLevel: 1
+  isFireballEquipped: 0
   QuennBookLevel: 1
+  isQuennBookEquipped: 0
   MagnetLevel: 1
-  MaxHealthLevel: 1
+  isMagnetEquipped: 0
+  MaxHealthLevel: 3
+  isMaxHealhEquipped: 0
   ItemSpeedBookLevel: 1
-  WingLevel: 1
+  isItemSpeedBookEquipped: 0
+  WingsLevel: 1
+  isWingsEquipped: 0

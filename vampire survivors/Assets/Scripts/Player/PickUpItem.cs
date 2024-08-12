@@ -13,7 +13,7 @@ public class PickUpItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
+        //Debug.Log("Collided with: " + collision.gameObject.name);
 
         if (collision.CompareTag("Exp") || collision.CompareTag("Hamburger"))
         {
