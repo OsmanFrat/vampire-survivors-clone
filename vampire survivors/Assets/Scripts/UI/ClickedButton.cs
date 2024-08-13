@@ -10,6 +10,8 @@ public class ClickedButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     [SerializeField] private Sprite _default, _pressed;
     [SerializeField] private AudioClip _compressClip;
     [SerializeField] private AudioSource _source;
+
+    [SerializeField] private GameManager gameManager;
     public void OnPointerDown(PointerEventData eventData)
     {
         _img.sprite = _pressed;
@@ -53,6 +55,17 @@ public class ClickedButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator UnpauseDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        gameManager.UnPauseGame();
+    }
+
+    public void UnpauseGame()
+    {
+        StartCoroutine(UnpauseDelay());
     }
 
     private void ExitGame()

@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public bool gamePaused = false;
 
-    [SerializeField] private AudioSource _source;
-    [SerializeField] private AudioClip levelUpSoundEffect;
-    [SerializeField] private AudioClip gameOverSoundEffect;
+    public bool playLevelUpSfx = false;
+    public bool playGameOverSfx = false;
+
     public GameObject colorfullBar;
 
     public WeaponsAndItems weaponsAndItems;
@@ -66,9 +66,9 @@ public class GameManager : MonoBehaviour
     {
         if (levelSystem.playerLeveledUP && !levelUpPanel.activeSelf)
         {
-            if (!_source.isPlaying)
+            if (!playLevelUpSfx)
             {
-                _source.PlayOneShot(levelUpSoundEffect);
+                playLevelUpSfx = true;
             }
             colorfullBar.SetActive(true);
             levelUpPanel.SetActive(true);
@@ -80,9 +80,9 @@ public class GameManager : MonoBehaviour
     {
         if (player.playerHealth <= 0 && !gameOverScreen.activeSelf)
         {
-            if (!_source.isPlaying)
+            if (!playGameOverSfx)
             {
-                _source.PlayOneShot(gameOverSoundEffect);
+                playGameOverSfx = true;
             }
 
             Time.timeScale = 0f;
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         gamePaused = true;
     }
 
-    private void UnPauseGame()
+    public void UnPauseGame()
     {
         Time.timeScale = 1f;
         pauseScreen.SetActive(false);

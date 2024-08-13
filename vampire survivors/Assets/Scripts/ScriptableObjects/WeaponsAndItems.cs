@@ -39,9 +39,9 @@ public class WeaponsAndItems : ScriptableObject
     public bool isMaxHealhEquipped = false;
 
     [Space(10)]
-    [Header("Item Speed Book")]
-    public int ItemSpeedBookLevel = 1;
-    public bool isItemSpeedBookEquipped = false;
+    [Header("Fast Hamburger")]
+    public int FastHamburgerLevel = 1;
+    public bool isFastHamburgerEquipped = false;
 
     [Space(10)]
     [Header("Wings")]
@@ -56,7 +56,7 @@ public class WeaponsAndItems : ScriptableObject
         QuennBookLevel = 1;
         MagnetLevel = 1;
         MaxHealthLevel = 1;
-        ItemSpeedBookLevel = 1;
+        FastHamburgerLevel = 1;
         WingsLevel = 1;
 
         isBladeEquipped = true;
@@ -65,7 +65,7 @@ public class WeaponsAndItems : ScriptableObject
         isQuennBookEquipped = false;
         isMagnetEquipped = false;
         isMaxHealhEquipped = false;
-        isItemSpeedBookEquipped = false;
+        isFastHamburgerEquipped = false;
         isWingsEquipped = false;
     }
 }

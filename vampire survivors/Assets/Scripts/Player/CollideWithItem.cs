@@ -4,9 +4,9 @@ public class CollideWithItem : MonoBehaviour
 {
     [SerializeField] private LevelSystem levelSystem;
     [SerializeField] private Player player;
-    [SerializeField] private AudioClip eatingSoundEffect;
-    [SerializeField] private AudioClip expSoundEffect;
-    [SerializeField] private AudioSource _source;
+
+    public bool playEatingSfx = false;
+    public bool playExpSfx = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +17,7 @@ public class CollideWithItem : MonoBehaviour
 
             Debug.Log("Exp collected!");
 
-            _source.PlayOneShot(expSoundEffect);
+            playExpSfx = true;
 
             Destroy(collision.gameObject);
         }
@@ -37,9 +37,10 @@ public class CollideWithItem : MonoBehaviour
 
             Debug.Log("Hamburger eaten!");
 
-            _source.PlayOneShot(eatingSoundEffect);
+            playEatingSfx = true;
 
             Destroy(collision.gameObject);
         }
     }
+
 }
