@@ -22,9 +22,9 @@ MonoBehaviour:
   isQuennBookEquipped: 0
   MagnetLevel: 1
   isMagnetEquipped: 0
-  MaxHealthLevel: 3
+  MaxHealthLevel: 1
   isMaxHealhEquipped: 0
-  ItemSpeedBookLevel: 1
-  isItemSpeedBookEquipped: 0
+  FastHamburgerLevel: 1
+  isFastHamburgerEquipped: 0
   WingsLevel: 1
   isWingsEquipped: 0

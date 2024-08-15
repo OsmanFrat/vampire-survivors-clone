@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -11,6 +11,23 @@ public class LevelSystem : MonoBehaviour
     [SerializeField] private Image xpProgressBar;
     public bool playerLeveledUP = false;
 
+    public bool hasDebugMode = false;
+
+    void Start()
+    {
+        // hasDebugMode test
+        if (hasDebugMode)
+        {
+            Debug.Log("Debug mode activated! TargetXp = 90000");
+            targetXp = 90000f;
+        }
+        else
+        {
+            Debug.Log("Normal mode activated! TargetXp += 50.");
+            targetXp += 50;
+        }
+    }
+
     public void ExperienceController()
     {
         levelText.text = "LVL: " + level.ToString();
@@ -19,10 +36,20 @@ public class LevelSystem : MonoBehaviour
         if (currentXp >= targetXp)
         {
             playerLeveledUP = true;
-            currentXp = currentXp - targetXp;
+            currentXp -= targetXp;
             level++;
-            targetXp += 50;
-            ExperienceController();
+
+            // Mode check
+            if (hasDebugMode)
+            {
+                Debug.Log("Debug mode activated! TargetXp = 90000");
+                targetXp = 90000f;
+            }
+            else
+            {
+                Debug.Log("Normal mode activated! TargetXp += 50.");
+                targetXp += 50;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class SpawnHamburger : MonoBehaviour
 {
@@ -8,7 +9,16 @@ public class SpawnHamburger : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnHamburgers", 0f, spawnInterval);
+        StartCoroutine(SpawnHamburgersRoutine());
+    }
+
+    private IEnumerator SpawnHamburgersRoutine()
+    {
+        while (true)
+        {
+            SpawnHamburgers();
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 
     private void SpawnHamburgers()

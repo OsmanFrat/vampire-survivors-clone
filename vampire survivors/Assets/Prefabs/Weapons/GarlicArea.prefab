@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7484638088411338035
 Transform:
   m_ObjectHideFlags: 0
@@ -154,4 +154,4 @@ MonoBehaviour:
   twoCircleSprite: {fileID: 6674295519167892996, guid: 20c436188f4a0ce4ea9b56991d9bc828, type: 3}
   threeCircleSprite: {fileID: 1260926863402959187, guid: 20c436188f4a0ce4ea9b56991d9bc828, type: 3}
   circleCol: {fileID: 124983788179360261}
-  weaponAndItemLevel: {fileID: 0}
+  weaponsAndItems: {fileID: 11400000, guid: 22130a4ef076a58489334736b40b8fd3, type: 2}

@@ -8,7 +8,7 @@ public class FastBurger : MonoBehaviour
     private void Start()
     {
         GameObject spawnHambergerObject = GameObject.Find("HamburgerSpawner");
-        spawnHamberger = spawnHamberger.GetComponent<SpawnHamburger>();
+        spawnHamberger = spawnHambergerObject.GetComponent<SpawnHamburger>();
     }
 
     private void Update()
