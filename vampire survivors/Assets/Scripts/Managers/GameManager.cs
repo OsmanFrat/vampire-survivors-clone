@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
+using UnityEditor.Search;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +27,14 @@ public class GameManager : MonoBehaviour
 
     public WeaponsAndItems weaponsAndItems;
 
+    public GameObject garlicObject;
+    public GameObject fireballShooterObject;
+    public GameObject queenBookObject;
+    public GameObject maxHealthObject;
+    public GameObject magnetObject;
+    public GameObject wingObject;
+    public GameObject fastBurgerObject;
+
     private void Awake()
     {
         weaponsAndItems.ResetValues();
@@ -38,7 +47,15 @@ public class GameManager : MonoBehaviour
         levelUpPanel.SetActive(false);
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
-    }
+
+        garlicObject.SetActive(false);
+        fireballShooterObject.SetActive(false);
+        queenBookObject.SetActive(false);
+        maxHealthObject.SetActive(false);
+        magnetObject.SetActive(false);
+        wingObject.SetActive(false);
+        fastBurgerObject.SetActive(false);
+}
 
     private void Update()
     {
@@ -49,6 +66,8 @@ public class GameManager : MonoBehaviour
         HandleLevelUp();
         HandleGameOver();
         HandlePauseToggle();
+
+        UpdatePlayerCurrentItems();
     }
 
     private void Timer()
@@ -132,5 +151,37 @@ public class GameManager : MonoBehaviour
                 UnPauseGame();
             }
         }
+    }
+
+    public void UpdatePlayerCurrentItems()
+    {
+        if (weaponsAndItems.isGarlicEquipped)
+        {
+            garlicObject.SetActive(true);
+        }
+        if (weaponsAndItems.isFireballEquipped)
+        {
+            fireballShooterObject.SetActive(true);
+        }
+        if (weaponsAndItems.isQuennBookEquipped)
+        {
+            queenBookObject.SetActive(true);
+        }
+        if (weaponsAndItems.isMaxHealhEquipped)
+        {
+            maxHealthObject.SetActive(true);
+        }
+        if (weaponsAndItems.isMagnetEquipped)
+        {
+            magnetObject.SetActive(true);
+        }
+        if (weaponsAndItems.isWingsEquipped)
+        {
+            wingObject.SetActive(true);
+        }
+        if (weaponsAndItems.isFastHamburgerEquipped)
+        {
+            fastBurgerObject.SetActive(true);
+        }    
     }
 }

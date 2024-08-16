@@ -52,4 +52,11 @@ public class LevelSystem : MonoBehaviour
             }
         }
     }
+
+    public void LevelUp() // Method to manually level up
+    {
+        playerLeveledUP = true;
+        currentXp = targetXp; // Ensure that XP is enough to level up
+        ExperienceController(); // Update the level and UI
+    }
 }

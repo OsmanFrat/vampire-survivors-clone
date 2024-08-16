@@ -34,7 +34,7 @@ public class WeaponsAndItems : ScriptableObject
     public bool isMagnetEquipped = false;
 
     [Space(10)]
-    [Header("Max Healh")]
+    [Header("Max Health")]
     public int MaxHealthLevel = 1;
     public bool isMaxHealhEquipped = false;
 
