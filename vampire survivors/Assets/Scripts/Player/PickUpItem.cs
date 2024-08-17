@@ -17,7 +17,6 @@ public class PickUpItem : MonoBehaviour
 
         if (collision.CompareTag("Exp") || collision.CompareTag("Hamburger"))
         {
-            Debug.Log("Collided with Exp!");
             collision.gameObject.TryGetComponent<FollowPlayer>(out FollowPlayer followPlayer);
             followPlayer.startFollow = true;
         }

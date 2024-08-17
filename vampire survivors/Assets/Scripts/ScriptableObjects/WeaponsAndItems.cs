@@ -22,8 +22,8 @@ public class WeaponsAndItems : ScriptableObject
 
     [Space(10)]
     [Header("Queen Book")]
-    public int QuennBookLevel = 1;
-    public bool isQuennBookEquipped = false;
+    public int QueenBookLevel = 1;
+    public bool isQueenBookEquipped = false;
 
     [Space(20)]
     [Header("---------- Items ------------")]
@@ -53,7 +53,7 @@ public class WeaponsAndItems : ScriptableObject
         GarlicLevel = 1;
         FireballLevel = 1;
         BladeLevel = 1;
-        QuennBookLevel = 1;
+        QueenBookLevel = 1;
         MagnetLevel = 1;
         MaxHealthLevel = 1;
         FastHamburgerLevel = 1;
@@ -62,7 +62,7 @@ public class WeaponsAndItems : ScriptableObject
         isBladeEquipped = true;
         isGarlicEquipped = false;
         isFireballEquipped = false;
-        isQuennBookEquipped = false;
+        isQueenBookEquipped = false;
         isMagnetEquipped = false;
         isMaxHealhEquipped = false;
         isFastHamburgerEquipped = false;

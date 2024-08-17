@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BladeLevel: 1
   isBladeEquipped: 1
-  GarlicLevel: 1
-  isGarlicEquipped: 0
-  FireballLevel: 1
-  isFireballEquipped: 0
-  QuennBookLevel: 1
-  isQuennBookEquipped: 0
-  MagnetLevel: 1
-  isMagnetEquipped: 0
+  GarlicLevel: 3
+  isGarlicEquipped: 1
+  FireballLevel: 3
+  isFireballEquipped: 1
+  QueenBookLevel: 2
+  isQueenBookEquipped: 1
+  MagnetLevel: 2
+  isMagnetEquipped: 1
   MaxHealthLevel: 1
   isMaxHealhEquipped: 0
   FastHamburgerLevel: 1
-  isFastHamburgerEquipped: 0
-  WingsLevel: 1
-  isWingsEquipped: 0
+  isFastHamburgerEquipped: 1
+  WingsLevel: 2
+  isWingsEquipped: 1

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using TMPro;
-using UnityEditor.Search;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject colorfullBar;
 
     public WeaponsAndItems weaponsAndItems;
+    [SerializeField] ButtonItemSelect buttonItemSelect;
 
     public GameObject garlicObject;
     public GameObject fireballShooterObject;
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         magnetObject.SetActive(false);
         wingObject.SetActive(false);
         fastBurgerObject.SetActive(false);
-}
+    }
 
     private void Update()
     {
@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
         HandlePauseToggle();
 
         UpdatePlayerCurrentItems();
+
+        // A debug function to manually level up
+        DebugLevelUp();
     }
 
     private void Timer()
@@ -83,15 +86,38 @@ public class GameManager : MonoBehaviour
 
     private void HandleLevelUp()
     {
-        if (levelSystem.playerLeveledUP && !levelUpPanel.activeSelf)
+        if (levelSystem.playerLeveledUP && !levelUpPanel.activeSelf && !buttonItemSelect.isItemSelected)
         {
             if (!playLevelUpSfx)
             {
                 playLevelUpSfx = true;
             }
+
+            levelSystem.playerLeveledUP = false;
             colorfullBar.SetActive(true);
             levelUpPanel.SetActive(true);
             Time.timeScale = 0f;
+
+            // Butonları güncellemek için çağrı ekleyin
+            UpdateItemButtons();
+        }
+        else if (buttonItemSelect.isItemSelected)
+        {
+            colorfullBar.SetActive(false);
+            levelUpPanel.SetActive(false);
+            Time.timeScale = 1f;
+            buttonItemSelect.isItemSelected = false;
+        }
+
+    }
+
+    private void UpdateItemButtons()
+    {
+        if (buttonItemSelect != null)
+        {
+            buttonItemSelect.SelectRandomItems(); // Yeni rastgele item seç
+            buttonItemSelect.UpdateButtonImages(); // Buton görsellerini güncelle
+            buttonItemSelect.AssignButtonEvents(); // Buton eventlerini yeniden ata
         }
     }
 
@@ -163,7 +189,7 @@ public class GameManager : MonoBehaviour
         {
             fireballShooterObject.SetActive(true);
         }
-        if (weaponsAndItems.isQuennBookEquipped)
+        if (weaponsAndItems.isQueenBookEquipped)
         {
             queenBookObject.SetActive(true);
         }
@@ -182,6 +208,21 @@ public class GameManager : MonoBehaviour
         if (weaponsAndItems.isFastHamburgerEquipped)
         {
             fastBurgerObject.SetActive(true);
-        }    
+        }
+    }
+
+    public void CloseLevelUpPanel()
+    {
+        levelUpPanel.SetActive(false);
+        colorfullBar.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    private void DebugLevelUp()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            levelSystem.LevelUp();
+        }
     }
 }

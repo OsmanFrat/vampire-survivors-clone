@@ -15,8 +15,6 @@ public class CollideWithItem : MonoBehaviour
             levelSystem.currentXp += 10;
             levelSystem.ExperienceController();
 
-            Debug.Log("Exp collected!");
-
             playExpSfx = true;
 
             Destroy(collision.gameObject);
@@ -34,8 +32,6 @@ public class CollideWithItem : MonoBehaviour
                     player.playerHealth = player.maxPlayerhealth;
                 }
             }
-
-            Debug.Log("Hamburger eaten!");
 
             playEatingSfx = true;
 

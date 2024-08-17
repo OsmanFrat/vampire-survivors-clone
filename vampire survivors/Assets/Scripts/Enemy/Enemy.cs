@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
             gameManager.killCount++;
             // kill the enemy
             Destroy(gameObject);
-            Debug.Log("Enemy killed!");
         }
     }
 

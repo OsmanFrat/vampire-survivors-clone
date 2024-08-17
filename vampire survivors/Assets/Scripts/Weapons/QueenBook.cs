@@ -35,7 +35,7 @@ public class QueenBook : MonoBehaviour
 
     private void UpdateQueenBooks()
     {
-        switch (weaponsAndItems.QuennBookLevel)
+        switch (weaponsAndItems.QueenBookLevel)
         {
             case 1:
                 //Debug.Log("QueenBook obtained!");
