@@ -6,7 +6,7 @@ public class Fireball : MonoBehaviour
     public GameObject fireballPrefab;
     public float spawnInterval = 3f;
     public float projectileSpeed = 7f;
-    public Vector2 offset = new Vector2(1, 0);
+    public Vector2 offset = new Vector2(0.3f, 0);
 
     private Vector2 lastInputDirection;
 
