@@ -25,6 +25,11 @@ public class WeaponsAndItems : ScriptableObject
     public int QueenBookLevel = 1;
     public bool isQueenBookEquipped = false;
 
+    [Space(10)]
+    [Header("Pentagram")]
+    public int PentagramLevel = 1;
+    public bool isPentagramEquipped = false;
+
     [Space(20)]
     [Header("---------- Items ------------")]
 
@@ -54,6 +59,8 @@ public class WeaponsAndItems : ScriptableObject
         FireballLevel = 1;
         BladeLevel = 1;
         QueenBookLevel = 1;
+        PentagramLevel = 1;
+
         MagnetLevel = 1;
         MaxHealthLevel = 1;
         FastHamburgerLevel = 1;
@@ -63,6 +70,8 @@ public class WeaponsAndItems : ScriptableObject
         isGarlicEquipped = false;
         isFireballEquipped = false;
         isQueenBookEquipped = false;
+        isPentagramEquipped = false;
+
         isMagnetEquipped = false;
         isMaxHealhEquipped = false;
         isFastHamburgerEquipped = false;

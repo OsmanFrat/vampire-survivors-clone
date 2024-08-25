@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e72e59707c015248b0248290970cb95, type: 3}
   m_Name: WeaponAndItems
   m_EditorClassIdentifier: 
-  BladeLevel: 2
+  BladeLevel: 1
   isBladeEquipped: 1
   GarlicLevel: 1
-  isGarlicEquipped: 1
-  FireballLevel: 2
-  isFireballEquipped: 1
-  QueenBookLevel: 3
-  isQueenBookEquipped: 1
+  isGarlicEquipped: 0
+  FireballLevel: 1
+  isFireballEquipped: 0
+  QueenBookLevel: 1
+  isQueenBookEquipped: 0
+  PentagramLevel: 1
+  isPentagramEquipped: 0
   MagnetLevel: 1
   isMagnetEquipped: 0
   MaxHealthLevel: 1
   isMaxHealhEquipped: 0
   FastHamburgerLevel: 1
-  isFastHamburgerEquipped: 1
+  isFastHamburgerEquipped: 0
   WingsLevel: 1
-  isWingsEquipped: 1
+  isWingsEquipped: 0

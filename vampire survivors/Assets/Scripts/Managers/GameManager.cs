@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject garlicObject;
     public GameObject fireballShooterObject;
     public GameObject queenBookObject;
+    public GameObject pentagramObject;
     public GameObject maxHealthObject;
     public GameObject magnetObject;
     public GameObject wingObject;
@@ -51,6 +52,8 @@ public class GameManager : MonoBehaviour
         garlicObject.SetActive(false);
         fireballShooterObject.SetActive(false);
         queenBookObject.SetActive(false);
+        pentagramObject.SetActive(false);
+
         maxHealthObject.SetActive(false);
         magnetObject.SetActive(false);
         wingObject.SetActive(false);
@@ -192,6 +195,10 @@ public class GameManager : MonoBehaviour
         if (weaponsAndItems.isQueenBookEquipped)
         {
             queenBookObject.SetActive(true);
+        }        
+        if (weaponsAndItems.isPentagramEquipped)
+        {
+            pentagramObject.SetActive(true);
         }
         if (weaponsAndItems.isMaxHealhEquipped)
         {

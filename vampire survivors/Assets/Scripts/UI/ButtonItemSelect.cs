@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ButtonItemSelect : MonoBehaviour
 {
     [SerializeField] WeaponsAndItems weaponsAndItems;
-    List<string> allWeaponsAndItems = new List<string> { "Blade", "Garlic", "FireballShooter", "QueenBook", "MaxHealth", "Magnet", "Wing", "FastBurger" };
+    List<string> allWeaponsAndItems = new List<string> { "Blade", "Garlic", "FireballShooter", "QueenBook", "Pentagram", "MaxHealth", "Magnet", "Wing", "FastBurger" };
     List<string> selectedItems = new List<string>();
 
     [SerializeField] Button[] itemButtons;
@@ -14,6 +14,7 @@ public class ButtonItemSelect : MonoBehaviour
     [SerializeField] private Sprite garlicSprite;
     [SerializeField] private Sprite fireballShooterSprite;
     [SerializeField] private Sprite queenBookSprite;
+    [SerializeField] private Sprite pentagramSprite;
     [SerializeField] private Sprite maxHealthSprite;
     [SerializeField] private Sprite magnetSprite;
     [SerializeField] private Sprite wingSprite;
@@ -32,6 +33,7 @@ public class ButtonItemSelect : MonoBehaviour
             { "Garlic", garlicSprite },
             { "FireballShooter", fireballShooterSprite },
             { "QueenBook", queenBookSprite },
+            { "Pentagram", pentagramSprite },
             { "MaxHealth", maxHealthSprite },
             { "Magnet", magnetSprite },
             { "Wing", wingSprite },
@@ -171,6 +173,22 @@ public class ButtonItemSelect : MonoBehaviour
                     weaponsAndItems.QueenBookLevel++;
                 }
                 else if (weaponsAndItems.isQueenBookEquipped && weaponsAndItems.QueenBookLevel >= 3)
+                {
+                    Debug.Log(itemName + " removed from allWeaponsAndItems!");
+                    //allWeaponsAndItems.Remove("QueenBook");
+                }
+                break;            
+            
+            case "Pentagram":
+                if (!weaponsAndItems.isPentagramEquipped)
+                {
+                    weaponsAndItems.isPentagramEquipped = true;
+                }
+                else if (weaponsAndItems.isPentagramEquipped && weaponsAndItems.PentagramLevel < 3)
+                {
+                    weaponsAndItems.PentagramLevel++;
+                }
+                else if (weaponsAndItems.isPentagramEquipped && weaponsAndItems.PentagramLevel >= 3)
                 {
                     Debug.Log(itemName + " removed from allWeaponsAndItems!");
                     //allWeaponsAndItems.Remove("QueenBook");
